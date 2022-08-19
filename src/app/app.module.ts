@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListingAreaComponent } from './components/listing-area/listing-area.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     NavbarComponent,
     ListingAreaComponent,
     CarouselComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
