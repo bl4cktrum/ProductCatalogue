@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListingAreaComponent } from './components/listing-area/listing-area.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListingAreaComponent
+    ListingAreaComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,10 @@
 
 body{
     height: 2000px !important;
-    /* background-color: #323232; */
+    background-color: #EFEDDE;
 }
 
+.mFont{
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+    font-size: 2rem;
+}
