@@ -3,7 +3,12 @@
 
 body{
     height: 2000px !important;
-    background-color: #000;
+    background-color: black;
+    background-image: url('/assets/back.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+    filter: contrast(1.1) !important;
 }
 
 .mFont{
