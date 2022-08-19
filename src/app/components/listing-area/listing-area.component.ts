@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/models/product';
-import { lastValueFrom, tap } from 'rxjs';
 
 
 @Component({
@@ -13,20 +12,25 @@ export class ListingAreaComponent implements OnInit {
   productList: Product[] = [];
   mString: string='first';
   apiUrl: string= "http://localhost:3000/";
+  imgFolderUrl: string= "/assets";
 
-  
 
   constructor(private http: HttpClient) { 
   }
 
   ngOnInit(): void {
     console.log("IM HERE");
-    this.fetchData();
-    console.log(this.mString);
+    // this.fetchData();
+    this.http.get<Product[]>(this.apiUrl+"products").subscribe(response => {
+      this.productList=response;
+      console.log(this.productList);
+      
+    }
+    );
+
   }
 
-  private async fetchData(){
-    const data = await lastValueFrom(this.http.get(this.apiUrl+"products"));
-    
-  }
+  // private async fetchData(){
+  //   const data = await lastValueFrom(this.http.get(this.apiUrl+"products"));
+  // }
 }

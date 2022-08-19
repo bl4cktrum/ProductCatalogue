@@ -1,36 +1,20 @@
 
-<div class="row  justify-content-around m-1 mFont text-white" style="background-color:rgba(255, 255, 255, .8); border-radius: 6px; border-color: #6d6d6d; border-style: solid; border-width: 1px; box-shadow: 0px 0px 12px #ffffff;">
-    <div class="card p-0 my-4" style="width: 23%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/1.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0 h-0 " style="border-radius: 0px 0px 2px 2px !important;">Patterns of Enterprise Application Architecture</a>
+
+<div  class="row  justify-content-around m-1 mFont" style="background-color:rgba(255, 255, 255, .8); border-radius: 6px; border-color: #6d6d6d; border-style: solid; border-width: 1px; box-shadow: 0px 0px 12px #ffffff;">
+  
+  <ng-template #noProduct>
+    <h2>No Product</h2>
+  </ng-template>
+
+  <div *ngIf="productList.length>=1 else noProduct" class="row  justify-content-around m-1 mFont text-white">
+    
+    <div *ngFor="let product of productList" class="card p-0 my-4" style="width: 23%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
+      <img src="{{imgFolderUrl}}{{product.image}}" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
+      <a href="#" class="btn btn-dark d-block m-0 h-0 " style="border-radius: 0px 0px 2px 2px !important;">{{product.name}}</a>
     </div>
-    <div class="card p-0 my-4" style="width: 23%;border-width: 0;">
-      <img src="https://assignment-api.piton.com.tr/static/4.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Clean Architecture: A Craftsman's Guide to Software Structure and Design</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 23%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/3.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">The Art of Computer Programming</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 23%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/5.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Go somewhere</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 22%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/4.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Go somewhere</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 22%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/1.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Go somewhere</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 22%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/5.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Go somewhere</a>
-    </div>
-    <div class="card p-0 my-4" style="width: 22%;border-width: 0; background-color: rgba(255, 255, 255, .7);">
-      <img src="https://assignment-api.piton.com.tr/static/3.jpeg" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
-      <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">Go somewhere</a>
-    </div>
+    
+
+  </div>
+    
     
 </div>
