@@ -60,7 +60,7 @@
     
     <div *ngFor="let product of productList" class="card p-0 my-4" style="width: 20rem;border-width: 0; background-color: rgba(255, 255, 255, .7);">
       
-        <img src="{{imgFolderUrl}}{{product.image}}" height="100%" class="card-img-top" style="border-radius: 2px;" alt="...">
+        <img src="{{imgFolderUrl}}{{product.image}}" height="100%" class="card-img-top" style="border-radius: 2px;" alt="{{product.description}}">
         <p class="w-100 text-end" style="top:0;position: absolute;margin: 0;background-color:rgba(0, 0, 0, .6)">{{product.price | currency:'USD':true}}</p>
       
       <a href="#" class="btn btn-dark d-block m-0" style="border-radius: 0px 0px 2px 2px !important;">{{product.name}}</a>

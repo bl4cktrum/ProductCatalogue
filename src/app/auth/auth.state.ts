@@ -9,7 +9,7 @@ import { AuthStateModel } from '../models/auth-state-model';
     name: 'auth',
     defaults: {
       token: null,
-      username: null
+      mail: null
     }
   })
   @Injectable()
@@ -32,7 +32,7 @@ import { AuthStateModel } from '../models/auth-state-model';
         tap((result: {token: string} | any) => {
           ctx.patchState({
             token: result.token,
-            username: action.payload.username
+            mail: action.payload.mail
           });
         })
       );
@@ -45,7 +45,7 @@ import { AuthStateModel } from '../models/auth-state-model';
         tap(() => {
           ctx.setState({
             token: null,
-            username: null
+            mail: null
           });
         })
       );
@@ -57,7 +57,7 @@ import { AuthStateModel } from '../models/auth-state-model';
         tap((result: { token: string | any}) => {
           ctx.patchState({
             token: result.token,
-            username: action.payload.username
+            mail: action.payload.mail
           });
         })
       );

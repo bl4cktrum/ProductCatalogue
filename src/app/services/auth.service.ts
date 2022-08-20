@@ -8,7 +8,7 @@ import { AuthStateModel } from '../models/auth-state-model';
 export class AuthService {
   constructor(private store: Store) {}
 
-  login(payload:{username:string, password:string}): Observable<AuthStateModel> {
+  login(payload:{mail:string, password:string}): Observable<AuthStateModel> {
     //TODO    
 
     return of();
@@ -17,7 +17,7 @@ export class AuthService {
     //TODO
     return of(); 
   }
-  register(payload:{username:string, password:string, email:string}) : Observable<AuthStateModel> {
+  register(payload:{name:string, surname:string,phoneNumber:number, mail:string, password:string, accessToken:string}) : Observable<AuthStateModel> {
     //TODO 
     return of();
   }

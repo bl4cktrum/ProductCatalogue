@@ -1,6 +1,6 @@
 export class Login {
     static readonly type = '[Auth] Login';
-    constructor(public payload: { username: string; password: string }) {}
+    constructor(public payload: { mail: string; password: string }) {}
 }
   
 export class Logout {
@@ -9,5 +9,5 @@ export class Logout {
 
 export class Register {
     static readonly type = '[Auth] Register';
-    constructor(public payload: { username: string; password: string ,email: string}) {}
+    constructor(public payload: {name:string, surname:string,phoneNumber:number, mail:string, password:string, accessToken:string}) {}
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -24,8 +23,4 @@ export class MainPageComponent implements OnInit {
       this.productList=response;
     });
   }
-
-  // private async fetchData(){
-  //   const data = await lastValueFrom(this.http.get(this.apiUrl+"products"));
-  // }
 }
