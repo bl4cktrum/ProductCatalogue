@@ -1,1 +1,61 @@
-<p>register works!</p>
+<div class="justify-content-center mx-auto" style="background-color:rgba(255, 255, 255, .8); border-radius: 6px; border-color: #6d6d6d; border-style: solid; border-width: 1px; box-shadow: 0px 0px 12px #ffffff;width: fit-content; ">
+
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="form-group form-signin text-end col-md-5 myAlertCont" style=>
+        <div class="text-center mb-4">
+          <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+          <h1 class="h3 my-3 font-weight-normal">Register</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quisquam.</p>
+        </div>
+        
+        <!-- Name Input -->
+        <div class="form-label-group mt-2 mb-0">
+          <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="Name">
+          <label for="inputName">Name</label>
+        </div>
+        <span *ngIf="registerForm.get('name')!.hasError('required') && submitted">Name is required.</span>
+
+        <!-- Surname Input -->
+        <div class="form-label-group mt-2 mb-0">
+          <input formControlName="surname" type="text" id="inputSurname" class="form-control" placeholder="Surname">
+          <label for="inputSurname">Surname</label>
+        </div>
+        <span *ngIf="registerForm.get('surname')!.hasError('required') && submitted">Surname is required.</span>
+
+        <!-- Phone Input -->
+        <div class="form-label-group mt-2 mb-0">
+          <input formControlName="phoneNumber" type="number" id="inputPhoneNumber" class="form-control" placeholder="PhoneNumber">
+          <label for="inputPhoneNumber">Surname</label>
+        </div>
+        <span *ngIf="registerForm.get('phoneNumber')!.hasError('required') && submitted">Phone number is required.</span>
+        <span *ngIf="registerForm.get('phoneNumber')!.hasError('pattern') && submitted">Please enter a valid phone number.</span>
+
+        <!-- Mail Input -->
+        <div class="form-label-group mt-2 mb-0">
+          <input formControlName="mail" type="email" id="inputMail" class="form-control" placeholder="Mail address">
+          <label for="inputMail">Mail address</label>
+        </div>
+        <span *ngIf="registerForm.get('mail')!.hasError('required') && submitted">Mail address is required.</span>
+        <span *ngIf="registerForm.get('mail')!.hasError('email')">Mail address is not valid.</span>
+  
+        <!-- Password Input -->
+        <div class="form-label-group mt-2 mb-0">
+          <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+          <label for="inputPassword">Password</label>
+        </div>
+        <span  *ngIf="registerForm.get('password')!.hasError('required') && submitted">Password is required.</span>
+        <span  *ngIf="registerForm.get('password')!.hasError('minlength')">Password must be longer than 6 chars.</span>
+        <span  *ngIf="registerForm.get('password')!.hasError('maxlength')">Password must be shorter than 20 chars.</span>
+        <span  *ngIf="registerForm.get('password')!.hasError('pattern')">Password is not alphanumeric.</span>
+        
+
+        <div class="checkbox my-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block mx-auto w-100 my-1" type="submit">Register</button>
+
+        <p class="mt-4 mb-1 text-muted text-center">&copy; 2022-2023</p>
+      </form>
+  </div>
+  

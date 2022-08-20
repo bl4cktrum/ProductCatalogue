@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse} from '@angular/common/http';
-import { Product } from '../models/product';
+import { Product } from '../models/product-model';
 import { Observable, tap, catchError, throwError } from 'rxjs';
 
 @Injectable()
@@ -11,7 +11,7 @@ export class ProductService {
 
   getProducts():Observable<Product[]>{
     return this.http.get<Product[]>(this.apiUrl+"product").pipe(
-      tap(response => {console.log(JSON.stringify(response));
+      tap(response => {console.log("get request is ok");
       }),
       catchError(throwError)
     )
