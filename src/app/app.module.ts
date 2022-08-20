@@ -9,8 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ListingAreaComponent } from './components/listing-area/listing-area.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -19,8 +18,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
   declarations: [
     AppComponent,
     NavbarComponent,
-    ListingAreaComponent,
-    CarouselComponent,
+    MainPageComponent,
     LoginComponent,
     RegisterComponent,
     ProductDetailComponent,

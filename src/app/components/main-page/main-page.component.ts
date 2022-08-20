@@ -6,11 +6,11 @@ import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-listing-area',
-  templateUrl: './listing-area.component.html',
-  styleUrls: ['./listing-area.component.css'],
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.css'],
   providers: [ProductService]
 })
-export class ListingAreaComponent implements OnInit {
+export class MainPageComponent implements OnInit {
   productList: Product[] = [];
   mString: string='first';
   imgFolderUrl: string= "/assets";

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListingAreaComponent } from './listing-area.component';
+import { MainPageComponent } from './main-page.component';
 
 describe('ListingAreaComponent', () => {
-  let component: ListingAreaComponent;
-  let fixture: ComponentFixture<ListingAreaComponent>;
+  let component: MainPageComponent;
+  let fixture: ComponentFixture<MainPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListingAreaComponent ]
+      declarations: [ MainPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListingAreaComponent);
+    fixture = TestBed.createComponent(MainPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
