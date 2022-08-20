@@ -2,7 +2,6 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
 body{
-    height: 2000px !important;
     background-color: black;
     background-image: url('/assets/back.jpg');
     background-size: contain;

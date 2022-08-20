@@ -1,1 +1,21 @@
-<p>product-detail works!</p>
+<div class="d-flex w-100 mFont mb-5" style="background-color: rgba(255, 255, 255, 0.3);border-radius: 15px;">
+    <div class="flex-grow-1 ms-5 mt-5 justify-content-between flex-column" style="display: flex;height: 600px">
+        <div>
+            <h2 class="mt-0 me-5 text-end" style="font-size:2.5rem">{{product.name}}</h2>
+            <hr class="bg-light border-1 border-top border-light me-5">
+            <p style="font-size:1.75rem">&emsp;{{product.description}}</p>
+        </div>
+
+        <div class="me-5 mb-5">
+            <button type="button" class="btn btn-outline-light btn-lg w-100">Add to cart</button>
+        </div>
+    </div>
+    <div class="flex-shrink-0">
+        <img style="border-radius: 15px;" src="{{imgFolderUrl}}{{product['image']}}" alt="" height="660px">
+    </div>
+
+    <div>
+    </div>
+
+</div>
+

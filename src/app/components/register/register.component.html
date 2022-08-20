@@ -23,8 +23,8 @@
 
         <!-- Phone Input -->
         <div class="form-label-group mt-2 mb-0">
-          <input formControlName="phoneNumber" type="number" id="inputPhoneNumber" class="form-control" placeholder="PhoneNumber">
-          <label for="inputPhoneNumber">Surname</label>
+          <input formControlName="phoneNumber" type="text" mask='+00(000) 000-00-00' id="inputPhoneNumber" class="form-control" placeholder="PhoneNumber">
+          <label for="inputPhoneNumber">Phone number</label>
         </div>
         <span *ngIf="registerForm.get('phoneNumber')!.hasError('required') && submitted">Phone number is required.</span>
         <span *ngIf="registerForm.get('phoneNumber')!.hasError('pattern') && submitted">Please enter a valid phone number.</span>

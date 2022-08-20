@@ -10,8 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   providers: [ProductService]
 })
 export class MainPageComponent implements OnInit {
-  productList: Product[] = [];
-  mString: string='first';
+  productList!: Product[];
   imgFolderUrl: string= "/assets";
 
 
@@ -22,5 +21,8 @@ export class MainPageComponent implements OnInit {
     this.productService.getProducts().subscribe(response => {
       this.productList=response;
     });
+
   }
+
+
 }
