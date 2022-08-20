@@ -89,3 +89,8 @@
   .btn-primary{
     --bs-btn-hover-bg: #000000;
   }
+
+  .myAlertCont>span{
+    display: block !important;
+    color: rgb(255, 0, 0) !important;
+  }
