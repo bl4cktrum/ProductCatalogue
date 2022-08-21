@@ -34,7 +34,7 @@ import { NgxMaskModule } from 'ngx-mask-2';
     ReactiveFormsModule,
     NgxsModule.forRoot([AuthState]),
     NgxsStoragePluginModule.forRoot({
-      key: 'auth.token',
+      key: 'auth',
     }),
   ],
   providers: [AuthService],

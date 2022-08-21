@@ -10,12 +10,9 @@ export class ProductService {
   constructor(private http:HttpClient) { }
 
   getProducts():Observable<Product[]>{
-    return this.http.get<Product[]>(this.apiUrl+"product").pipe(
-      tap(response => {console.log("get request is ok");
-      }),
-      catchError(throwError)
-    )
+    return this.http.get<Product[]>(this.apiUrl+"product").pipe(catchError(throwError))
   }
+  
   getProduct(productId:string):Observable<Product[]>{
     return this.http.get<Product[]>(this.apiUrl+"product?id="+productId).pipe(catchError(throwError))
   }

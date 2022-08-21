@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { State, Selector, Action, StateContext } from '@ngxs/store';
 import { Login,Logout,Register } from './auth.actions';
-import { tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { AuthStateModel } from '../models/auth-state-model';
 
@@ -28,38 +28,35 @@ import { AuthStateModel } from '../models/auth-state-model';
   
     @Action(Login)
     login(ctx: StateContext<AuthStateModel>, action: Login) {
-      return this.authService.login(action.payload).pipe(
-        tap((result: {token: string} | any) => {
+      this.authService.login(action.payload).subscribe((data: Observable<any>) => {
+        if (!(data instanceof Observable<any> )) {
           ctx.patchState({
-            token: result.token,
+            token: data,
             mail: action.payload.mail
           });
-        })
-      );
+        }
+      })
     }
   
     @Action(Logout)
     logout(ctx: StateContext<AuthStateModel>) {
-      const state = ctx.getState();
-      return this.authService.logout().pipe(
-        tap(() => {
-          ctx.setState({
-            token: null,
-            mail: null
-          });
-        })
-      );
+      ctx.setState({
+        token: null,
+        mail: null
+      })
     }
 
     @Action(Register)
     register(ctx: StateContext<AuthStateModel>, action: Register) {
-      return this.authService.register(action.payload).pipe(
-        tap((result: { token: string | any}) => {
-          ctx.patchState({
-            token: result.token,
-            mail: action.payload.mail
-          });
+      this.authService.register(action.payload).subscribe((data: Observable<any>) => {
+        data.subscribe(accessToken => {
+          if (!(accessToken instanceof Observable<never> )) {
+            ctx.patchState({
+              token: accessToken,
+              mail: action.payload.mail
+            });
+          }
         })
-      );
+      })
     }
   }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngxs/store';
-import { Login } from "src/app/auth/auth.actions"
+import { Select, Store } from '@ngxs/store';
+import { Observable, tap } from 'rxjs';
+import { Login, Logout } from "src/app/auth/auth.actions"
+import { AuthState } from 'src/app/auth/auth.state';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,25 @@ import { Login } from "src/app/auth/auth.actions"
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder, private store:Store) { }
-
+  constructor(private formBuilder:FormBuilder, private store:Store) {
+  }
+  
   loginForm!:FormGroup;
   submitted!:boolean;
-
+  
+  @Select(AuthState.isAuthenticated) isAuthenticated$!: Observable<boolean>;
+  @Select(AuthState.token) token$!: Observable<string | null>;
+  
+  // This functions was created for development env. 
+  checkToken(){
+    this.isAuthenticated$.subscribe(console.log)
+    this.token$.subscribe(console.log)
+  }
+  
+  logout(){
+    this.store.dispatch(new Logout()).subscribe();
+  }
+  
   createLoginForm(){
     this.loginForm = this.formBuilder.group({
       mail:['',[
@@ -37,23 +53,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    // a bug fix to prevent 'mail required' error at initiating login compenent.
     this.submitted= true;
     
     if (this.loginForm.invalid) {
-      //TODO
-      //INVALID form
+      //Do nothing when form is INVALID
       return;
     }
-    //TODO
-    //valid area
     else{
       this.store.dispatch(new Login({
         mail: this.loginForm.get('mail')?.value,
         password: this.loginForm.get('password')?.value
-      }))
+      })).subscribe()
     }
-
-    
   }
-
 }

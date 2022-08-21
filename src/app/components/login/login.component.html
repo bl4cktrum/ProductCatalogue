@@ -32,6 +32,12 @@
       <button class="btn btn-primary btn-block mx-auto w-100 my-1" type="submit">Login</button>
       
     </form>
+
+    
+    <button (click)="checkToken()" class="btn btn-primary btn-block mx-auto w-100 my-1">CHECK</button>
+    <button (click)="logout()" class="btn btn-primary btn-block mx-auto w-100 my-1">LOGOUT</button>
+
+
     <div class="form-group form-signin text-end col-md-5 pt-0">
       <p class="mt-2 mb-0">Don't you have an account?</p>
       <button class="mt-0 btn btn-light btn-outline-dark btn-block mx-auto w-100" [routerLink]="'register'">Register</button>
