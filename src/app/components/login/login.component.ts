@@ -24,6 +24,14 @@ export class LoginComponent implements OnInit {
   // This functions was created for development env. 
   checkToken(){
     // this.store.select(state => state.auth).subscribe(data => {console.log(data)});
+    for (var i = 0, len = 500; i < len; i += 1) {
+      ((i: number) => {
+        setInterval(() => {
+          this.isAuthenticated$.subscribe(console.log)
+          this.token$.subscribe(console.log);
+        }, 1500)
+      })(1);
+     }
     this.isAuthenticated$.subscribe(console.log)
     this.token$.subscribe(console.log)
   }

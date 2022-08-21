@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxsModule } from '@ngxs/store';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsStoragePluginModule, StorageOption } from '@ngxs/storage-plugin';
 import { AuthState } from './auth/auth.state';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,6 +35,7 @@ import { NgxMaskModule } from 'ngx-mask-2';
     NgxsModule.forRoot([AuthState]),
     NgxsStoragePluginModule.forRoot({
       key: 'auth',
+      storage: StorageOption.LocalStorage
     }),
   ],
   providers: [AuthService],
