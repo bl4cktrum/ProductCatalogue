@@ -1,6 +1,11 @@
 export class Login {
     static readonly type = '[Auth] Login';
-    constructor(public payload: { mail: string; password: string }) {}
+    constructor(public payload: { mail: string; password: string , rememberMe: boolean}) {}
+}
+
+export class Relogin {
+    static readonly type = '[Auth] Login';
+    constructor(){}
 }
   
 export class Logout {

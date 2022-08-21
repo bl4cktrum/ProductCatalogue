@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { State, Selector, Action, StateContext } from '@ngxs/store';
-import { Login,Logout,Register } from './auth.actions';
+import { Login,Logout,Register, Relogin } from './auth.actions';
 import { Observable, tap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { AuthStateModel } from '../models/auth-state-model';
@@ -34,7 +34,21 @@ import { AuthStateModel } from '../models/auth-state-model';
             token: data,
             mail: action.payload.mail
           });
+          if(action.payload.rememberMe== true){
+            localStorage.setItem('mail',action.payload.mail);
+            localStorage.setItem('token',data);
+          }
         }
+      })
+    }
+
+    @Action(Relogin)
+    relogin(ctx: StateContext<AuthStateModel>) {
+      let token = localStorage.getItem('token');
+      let mail = localStorage.getItem('mail');
+      ctx.setState({
+        token: token,
+        mail: mail
       })
     }
   
@@ -44,6 +58,8 @@ import { AuthStateModel } from '../models/auth-state-model';
         token: null,
         mail: null
       })
+      localStorage.removeItem('mail');
+      localStorage.removeItem('token');
     }
 
     @Action(Register)
