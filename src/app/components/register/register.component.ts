@@ -58,7 +58,9 @@ export class RegisterComponent implements OnInit {
     }
     //TODO
     console.log("VALID");
-    
   }
 
+  createToken(){
+    return Date.now().toString(36) + Math.random().toString(36) + Date.now().toString(36)+Math.random().toString(36)+Math.random().toString(36);
+  }
 }

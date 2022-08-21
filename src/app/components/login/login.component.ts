@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngxs/store';
+import { Login } from "src/app/auth/auth.actions"
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private store:Store) { }
 
   loginForm!:FormGroup;
   submitted!:boolean;
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
       ]]
     },{updateOn: 'submit'})   
   }
-
+  
   ngOnInit(): void {
     this.submitted = false;
     this.createLoginForm();
@@ -39,11 +41,18 @@ export class LoginComponent implements OnInit {
     
     if (this.loginForm.invalid) {
       //TODO
-      console.log("INVALID");
+      //INVALID form
       return;
     }
     //TODO
-    console.log("VALID");
+    //valid area
+    else{
+      this.store.dispatch(new Login({
+        mail: this.loginForm.get('mail')?.value,
+        password: this.loginForm.get('password')?.value
+      }))
+    }
+
     
   }
 
