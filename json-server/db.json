@@ -1,0 +1,47 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "name": "Patterns of Enterprise Application Architecture",
+      "price": 59,
+      "image": "/static/1.jpeg",
+      "description": "This book is actually two books in one. The first section is a short tutorial on developing enterprise applications, which you can read from start to finish to understand the scope of the book's lessons. The next section, the bulk of the book, is a detailed reference to the patterns themselves. Each pattern provides usage and implementation information, as well as detailed code examples in Java or C#. The entire book is also richly illustrated with UML diagrams to further explain the concepts.",
+      "timeStamp": "2022-04-08T11:56:14.613Z"
+    },
+    {
+      "id": 3,
+      "name": "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
+      "price": 22,
+      "image": "/static/3.jpeg",
+      "description": "Learn what software architects need to achieve–and core disciplines and practices for achieving it",
+      "timeStamp": "2022-04-08T12:01:59.323Z"
+    },
+    {
+      "id": 5,
+      "name": "The Art of Computer Programming",
+      "price": 35,
+      "image": "/static/4.jpeg",
+      "description": "This magnificent tour de force presents a comprehensive overview of a wide variety of algorithms and the analysis of them. Now in its third edition, The Art of Computer Programming... contains substantial revisions by the author and includes numerous new exercises.",
+      "timeStamp": "2022-04-08T15:13:28.796Z"
+    },
+    {
+      "id": 6,
+      "name": "CODE: The Hidden Language of Computer Hardware and Software",
+      "price": 25,
+      "image": "/static/5.jpeg",
+      "description": "What do flashlights, the British invasion, black cats, and seesaws have to do with computers? In CODE, they show us the ingenious ways we manipulate language and invent new means of communicating with each other. And through CODE, we see how this ingenuity and our very human compulsion to communicate have driven the technological innovations of the past two centuries.",
+      "timeStamp": "2022-04-08T15:14:34.059Z"
+    }
+  ],
+  
+  "user": [
+    {
+      "name": "Y",
+      "surname": "C",
+      "phoneNumber":5071440710,
+      "mail": "yc@gmail.com",
+      "password": "123123123",
+      "access-token": "at123"
+    }
+  ]
+}
