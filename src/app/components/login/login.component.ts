@@ -23,10 +23,11 @@ export class LoginComponent implements OnInit {
   
   // This functions was created for development env. 
   checkToken(){
+    // this.store.select(state => state.auth).subscribe(data => {console.log(data)});
     this.isAuthenticated$.subscribe(console.log)
     this.token$.subscribe(console.log)
   }
-  
+
   logout(){
     this.store.dispatch(new Logout()).subscribe();
   }
