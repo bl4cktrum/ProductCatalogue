@@ -21,7 +21,11 @@
         </ul>
         <form class="d-flex" role="search">
           <button class="btn btn-outline-light mx-2" type="submit">Cart</button>
-          <button [routerLink]="'login'" class="btn btn-outline-light mx-2" type="submit">Login</button>
+          <button *ngIf="!(isAuthenticated$ | async); else logoutTemp" [routerLink]="'login'" class="btn btn-outline-light mx-2">Login</button>
+          <ng-template #logoutTemp>
+            <button (click)="logout()" class="btn btn-outline-light mx-2">Logout</button>
+          </ng-template>
+          
         </form>
       </div>
     </div>

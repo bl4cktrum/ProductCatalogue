@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask-2';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { NgxMaskModule } from 'ngx-mask-2';
     NgxsModule.forRoot([AuthState]),
     NgxsStoragePluginModule.forRoot(),
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

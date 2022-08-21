@@ -4,6 +4,7 @@ import { Login,Logout,Register, Relogin } from './auth.actions';
 import { Observable, tap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import { AuthStateModel } from '../models/auth-state-model';
+import { Router } from '@angular/router';
 
 @State<AuthStateModel>({
     name: 'auth',
@@ -24,7 +25,7 @@ import { AuthStateModel } from '../models/auth-state-model';
       return !!state.token;
     }
   
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router:Router) {}
   
     @Action(Login)
     login(ctx: StateContext<AuthStateModel>, action: Login) {
@@ -38,6 +39,9 @@ import { AuthStateModel } from '../models/auth-state-model';
             localStorage.setItem('mail',action.payload.mail);
             localStorage.setItem('token',data);
           }
+          setTimeout(()=>{
+            this.router.navigate(['']);
+          },400)
         }
       })
     }
@@ -50,6 +54,7 @@ import { AuthStateModel } from '../models/auth-state-model';
         token: token,
         mail: mail
       })
+      this.router.navigate(['']);
     }
   
     @Action(Logout)
@@ -60,6 +65,7 @@ import { AuthStateModel } from '../models/auth-state-model';
       })
       localStorage.removeItem('mail');
       localStorage.removeItem('token');
+      this.router.navigate(['login']);
     }
 
     @Action(Register)
@@ -71,6 +77,9 @@ import { AuthStateModel } from '../models/auth-state-model';
               token: accessToken,
               mail: action.payload.mail
             });
+            setTimeout(()=>{
+              this.router.navigate(['']);
+            },400)
           }
         })
       })

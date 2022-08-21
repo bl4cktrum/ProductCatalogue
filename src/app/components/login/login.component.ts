@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgModel, Validators } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
-import { Observable, tap } from 'rxjs';
-import { Login, Logout, Relogin } from "src/app/auth/auth.actions"
+import { Observable } from 'rxjs';
+import { Login, Relogin } from "src/app/auth/auth.actions"
 import { AuthState } from 'src/app/auth/auth.state';
 
 @Component({
@@ -19,20 +19,6 @@ export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   submitted!:boolean;
   rememberMe!:boolean;
-
-  @Select(AuthState.isAuthenticated) isAuthenticated$!: Observable<boolean>;
-  @Select(AuthState.token) token$!: Observable<string | null>;
-  
-  // This functions was created for development env. 
-  checkToken(){
-    // this.store.select(state => state.auth).subscribe(data => {console.log(data)});
-    this.isAuthenticated$.subscribe(console.log)
-    this.token$.subscribe(console.log)
-  }
-
-  logout(){
-    this.store.dispatch(new Logout()).subscribe();
-  }
   
   createLoginForm(){
     this.loginForm = this.formBuilder.group({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product-model';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -14,14 +14,17 @@ export class MainPageComponent implements OnInit {
   imgFolderUrl: string= "/assets";
 
 
-  constructor(private productService: ProductService) { 
+  constructor(private productService: ProductService, private ngZone:NgZone) { 
+    this.ngZone.run(() => {
+      this.productService.getProducts().subscribe(response => {
+        this.productList=response;
+    });
+  
+    })
   }
 
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe(response => {
-      this.productList=response;
-    });
-
+  ngOnInit(): void {    
+    
   }
 
 

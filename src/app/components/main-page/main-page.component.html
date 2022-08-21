@@ -56,7 +56,7 @@
     <h2>No Product</h2>
   </ng-template>
 
-  <div *ngIf="productList.length>=1 else noProduct" class="row justify-content-around m-1 mFont text-white">
+  <div *ngIf="productList!=null else noProduct" class="row justify-content-around m-1 mFont text-white">
     
     <a *ngFor="let product of productList" class="card p-0 my-4" routerLink="product/{{product.id}}" style="width: 20rem;border-width: 0; background-color: rgba(255, 255, 255, .7);">
       
