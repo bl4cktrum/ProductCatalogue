@@ -2,7 +2,7 @@
 
   <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-group form-signin text-end col-md-5 myAlertCont pb-0">
       <div class="text-center mb-4">
-        <!-- <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+
         <h1 class="h3 my-3 font-weight-normal">Login</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, quisquam.</p>
       </div>
@@ -19,7 +19,7 @@
         <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
         <label for="inputPassword">Password</label>
       </div>
-      <span  *ngIf="loginForm.get('password')!.hasError('required') && submitted">Password address is required.</span>
+      <span  *ngIf="loginForm.get('password')!.hasError('required') && submitted">Password is required.</span>
       <span  *ngIf="loginForm.get('password')!.hasError('minlength')">Password must be longer than 6 chars.</span>
       <span  *ngIf="loginForm.get('password')!.hasError('maxlength')">Password must be shorter than 20 chars.</span>
       <span  *ngIf="loginForm.get('password')!.hasError('pattern')">Password is not alphanumeric.</span>

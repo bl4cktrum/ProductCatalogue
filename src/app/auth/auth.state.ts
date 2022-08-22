@@ -39,9 +39,7 @@ import { Router } from '@angular/router';
             localStorage.setItem('mail',action.payload.mail);
             localStorage.setItem('token',data);
           }
-          setTimeout(()=>{
-            this.router.navigate(['']);
-          },400)
+          this.router.navigate(['']);
         }
       })
     }
@@ -77,9 +75,7 @@ import { Router } from '@angular/router';
               token: accessToken,
               mail: action.payload.mail
             });
-            setTimeout(()=>{
-              this.router.navigate(['']);
-            },400)
+            this.router.navigate(['']);
           }
         })
       })
