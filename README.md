@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## JSON-server
 
-Install json-server on your computer. Relocate to the json-server file in the project and run `json-server --watch db.json` in here. You should get an output like the one below.
+Install JSON-server on your computer.(https://github.com/typicode/json-server) Relocate to the json-server folder in the project and run `json-server --watch db.json` in here. You should get an output like the one below.
 
 ![image](https://user-images.githubusercontent.com/53413144/185869983-e9df2648-7203-4c8c-a5b1-5cb7423033de.png)
 
